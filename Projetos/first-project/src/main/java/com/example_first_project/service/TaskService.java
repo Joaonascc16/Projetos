@@ -1,6 +1,5 @@
 package com.example_first_project.service;
 
-import com.example_first_project.dto.TaskResponse;
 import com.example_first_project.entity.TaskEntity;
 import com.example_first_project.repository.PrioridadeRepository;
 import com.example_first_project.repository.StatusRepository;
@@ -36,11 +35,12 @@ public class TaskService {
 
     }
     //UPDATE
-    public TaskEntity updateTask(Long id, TaskEntity uptadeTaskEntity, TaskResponse updateTaskEntity) {
+    public TaskEntity updateTask(Long id, TaskEntity uptadeTaskEntity) {
         TaskEntity existingTask = findById(id);
 
         existingTask.setTitulo(updateTaskEntity.getTitulo());
         existingTask.setStatus(updateTaskEntity.getStatus());
+
         existingTask.setPrioridade(updateTaskEntity.getPrioridade());
         return taskRepository.save(existingTask);
 

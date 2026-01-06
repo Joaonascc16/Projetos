@@ -40,7 +40,7 @@ public class TaskController {
             @PathVariable Long id,
             @RequestBody TaskEntity updateTaskEntity
     ) {
-        return ResponseEntity.ok(taskService.updateTask(id, updateTaskEntity, updateTaskEntity));
+        return ResponseEntity.ok(taskService.updateTask(id, updateTaskEntity));
     }
     //DELETE
     @DeleteMapping("/{id}")

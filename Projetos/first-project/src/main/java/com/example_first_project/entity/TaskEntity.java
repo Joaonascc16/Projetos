@@ -37,7 +37,7 @@ public class TaskEntity {
         return prioridade;
     }
 
-    public void setPrioridade(String prioridade) {
+    public void setPrioridade(PrioridadeEntity prioridade) {
         this.prioridade = prioridade;
     }
 
@@ -45,7 +45,7 @@ public class TaskEntity {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEntity status) {
         this.status = status;
     }
 }
