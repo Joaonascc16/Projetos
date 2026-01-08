@@ -4,8 +4,8 @@ public class TaskResponse {
 
     private Long id;
     private String titulo;
-    private String prioridade;
-    private String status;
+    private Long prioridade;
+    private Long status;
 
     public Long getId() {
         return id;
@@ -23,19 +23,19 @@ public class TaskResponse {
         this.titulo = titulo;
     }
 
-    public String getPrioridade() {
+    public Long getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(String prioridade) {
+    public void setPrioridade(Long prioridade) {
         this.prioridade = prioridade;
     }
 
-    public String getStatus() {
+    public Long getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Long status) {
         this.status = status;
     }
 }

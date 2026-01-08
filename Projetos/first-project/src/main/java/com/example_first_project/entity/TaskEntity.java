@@ -1,6 +1,8 @@
 package com.example_first_project.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class TaskEntity {
@@ -8,13 +10,15 @@ public class TaskEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @NotBlank(message = "O titulo da tarefa não pode ficar em branco")
     private String titulo;
 
     @ManyToOne
+    @NotNull (message = "Prioridade nao pode ficar vazia")
     private PrioridadeEntity prioridade;
 
     @ManyToOne
+    @NotNull(message = "Status nao pode ficar vazio")
     private StatusEntity status;
 
     public Long getId() {
