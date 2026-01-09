@@ -67,7 +67,7 @@ public class TaskService {
         return taskRepository.save(existingTask);
     }
 
-}
+
     //DELETE
     public void deleteTask(Long id) {
         TaskEntity existingTask = findById(id);
