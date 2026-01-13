@@ -1,9 +1,7 @@
 package com.example_first_project.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class StatusEntity {
@@ -12,6 +10,8 @@ public class StatusEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Nome do status não pode ficar vazio!")
+    @Column(nullable = false, unique = true)
     private String nome;
 
     public Long getId() {

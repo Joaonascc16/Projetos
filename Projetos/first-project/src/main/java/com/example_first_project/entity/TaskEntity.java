@@ -14,10 +14,12 @@ public class TaskEntity {
     private String titulo;
 
     @ManyToOne
+    @JoinColumn(name = "prioridade_id", nullable = false)
     @NotNull (message = "Prioridade nao pode ficar vazia")
     private PrioridadeEntity prioridade;
 
     @ManyToOne
+    @JoinColumn(name = "status_id", nullable = false)
     @NotNull(message = "Status nao pode ficar vazio")
     private StatusEntity status;
 
