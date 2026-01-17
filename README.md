@@ -24,7 +24,10 @@ Arquitetura baseada em camadas:
 - Controller
 - Service
 - Repository
-- Model
+- DTOs
+- Config
+- Entity
+- index.html 
 
 ## Objetivo do Projeto
 Projeto desenvolvido para fins de estudo e prática de desenvolvimento backend com Java e Spring Boot, aplicando conceitos de API REST, CRUD e persistência de dados.
