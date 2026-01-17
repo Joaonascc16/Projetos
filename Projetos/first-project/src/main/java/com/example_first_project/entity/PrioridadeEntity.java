@@ -19,6 +19,13 @@ public class PrioridadeEntity {
     @Column(nullable = false, unique = true)
     private String nome;
 
+    public PrioridadeEntity() {
+
+    }
+    public PrioridadeEntity(String nome) {
+        this.nome = nome;
+    }
+
     public Long getId() {
         return id;
     }

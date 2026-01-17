@@ -14,6 +14,14 @@ public class StatusEntity {
     @Column(nullable = false, unique = true)
     private String nome;
 
+    public StatusEntity() {
+
+    }
+
+    public StatusEntity(String nome) {
+        this.nome = nome;
+    }
+
     public Long getId() {
         return id;
     }

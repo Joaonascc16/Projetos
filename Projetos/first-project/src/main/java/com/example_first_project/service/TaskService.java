@@ -1,6 +1,8 @@
 package com.example_first_project.service;
 
 import com.example_first_project.dto.TaskRequest;
+import com.example_first_project.entity.PrioridadeEntity;
+import com.example_first_project.entity.StatusEntity;
 import com.example_first_project.entity.TaskEntity;
 import com.example_first_project.repository.PrioridadeRepository;
 import com.example_first_project.repository.StatusRepository;
@@ -24,17 +26,16 @@ public class TaskService {
     //CREATE
     public TaskEntity createTask(TaskRequest request) {
         // Verifica se a prioridade existe
+        PrioridadeEntity prioridade = prioridadeRepository.findById(request.getPrioridadeId())
+                .orElseThrow(() -> new RuntimeException("Prioridade não encontrada"));
+
+        StatusEntity status = statusRepository.findById(request.getStatusId()).orElseThrow(() -> new RuntimeException("Status não encontrado"));
+
         TaskEntity taskEntity = new TaskEntity();
         taskEntity.setTitulo(request.getTitulo());
+        taskEntity.setPrioridade(prioridade);
+        taskEntity.setStatus(status);
 
-        taskEntity.setPrioridade(prioridadeRepository.findById(request.getPrioridadeId())
-                .orElseThrow(() -> new RuntimeException("Prioridade não encontrada"))
-        );
-
-        // Verifica se o status existe
-        taskEntity.setStatus(statusRepository.findById(request.getStatusId())
-                .orElseThrow(() -> new RuntimeException("Status não encontrado"))
-        );
 
         return taskRepository.save(taskEntity);
     }
